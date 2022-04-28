@@ -18,6 +18,8 @@ public class Customer {
             System.out.println("không thể rút ");
             try {
                 wait();
+                //wait(): cho phép thread loại ra khỏi danh sách thread đang hoạt động cho đến khi
+                // 1 thread gọi hàm notify()
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -31,6 +33,8 @@ public class Customer {
         balance += amount;
         System.out.println("nạp tiền thành công. tài khoản hiện tại: "+ balance);
         notify();
+        //notify(): thông báo và kích hoạt trờ lại thread đầu tiền gọi wait() trên cùng
+        //1 đối tượng
     }
 
     public static void main(String[] args) {
